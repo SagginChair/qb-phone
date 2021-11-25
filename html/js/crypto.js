@@ -1,3 +1,4 @@
+
 var SelectedCryptoTab = Config.DefaultCryptoPage;
 var ActionTab = null;
 $(".cryptotab-"+SelectedCryptoTab).css({"display":"block"});
@@ -258,11 +259,11 @@ $(".crypto-action-page-buy-crypto-input-coins").keyup(function(){
 $(".crypto-action-page-sell-crypto-input-money").keyup(function(){
     var MoneyInput = this.value
 
-    $(".crypto-action-page-sell-crypto-input-coins").val((MoneyInput / CryptoData.Worth).toFixed(6));
+    $(".crypto-action-page-sell-crypto-input-coins").val((MoneyInput / CryptoData.Value).toFixed(6));
 }); 
 
 $(".crypto-action-page-sell-crypto-input-coins").keyup(function(){
     var MoneyInput = this.value
 
-    $(".crypto-action-page-sell-crypto-input-money").val(Math.ceil(CryptoData.Worth * MoneyInput));
+    $(".crypto-action-page-sell-crypto-input-money").val(Math.ceil(CryptoData.Value * MoneyInput));
 });
