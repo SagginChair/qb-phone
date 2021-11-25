@@ -5,6 +5,7 @@ $(".crypto-header-footer").find('[data-cryptotab="'+SelectedCryptoTab+'"]').addC
 
 var CryptoData = [];
 CryptoData.Portfolio = 0;
+CryptoData.Value = 500;
 CryptoData.Worth = 1000;
 CryptoData.WalletId = null;
 CryptoData.History = [];
@@ -15,7 +16,7 @@ function SetupCryptoData(Crypto) {
     CryptoData.Worth = Crypto.Worth;
     CryptoData.WalletId = Crypto.WalletId;
 
-    $(".crypto-action-page-wallet").html("Wallet: "+CryptoData.Portfolio+" Qbit('s)");
+    $(".crypto-action-page-wallet").html("Wallet: "+CryptoData.Portfolio+" Bitcoin");
     $(".crypto-walletid").html(CryptoData.WalletId);
     $(".cryptotab-course-list").html("");
     if (CryptoData.History.length > 0) {
@@ -38,8 +39,8 @@ function SetupCryptoData(Crypto) {
     }
 
     $(".crypto-portofolio").find('p').html(CryptoData.Portfolio);
-    $(".crypto-course").find('p').html("$"+CryptoData.Worth);
-    $(".crypto-volume").find('p').html("$"+Math.ceil(CryptoData.Portfolio * CryptoData.Worth));
+    $(".crypto-course").find('p').html("$"+CryptoData.Value);
+    $(".crypto-volume").find('p').html("$"+Math.ceil(CryptoData.Portfolio * CryptoData.Value));
 }
 
 function UpdateCryptoData(Crypto) {
@@ -48,7 +49,7 @@ function UpdateCryptoData(Crypto) {
     CryptoData.Worth = Crypto.Worth;
     CryptoData.WalletId = Crypto.WalletId;
 
-    $(".crypto-action-page-wallet").html("Wallet: "+CryptoData.Portfolio+" Qbit('s)");
+    $(".crypto-action-page-wallet").html("Wallet: "+CryptoData.Portfolio+" Bitcoin");
     $(".crypto-walletid").html(CryptoData.WalletId);
     $(".cryptotab-course-list").html("");
     if (CryptoData.History.length > 0) {
@@ -71,8 +72,8 @@ function UpdateCryptoData(Crypto) {
     }
 
     $(".crypto-portofolio").find('p').html(CryptoData.Portfolio);
-    $(".crypto-course").find('p').html("$"+CryptoData.Worth);
-    $(".crypto-volume").find('p').html("$"+Math.ceil(CryptoData.Portfolio * CryptoData.Worth));
+    $(".crypto-course").find('p').html("$"+CryptoData.Value);
+    $(".crypto-volume").find('p').html("$"+Math.ceil(CryptoData.Portfolio * CryptoData.Value));
 }
 
 function RefreshCryptoTransactions(data) {
