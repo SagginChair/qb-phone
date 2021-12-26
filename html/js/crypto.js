@@ -6,7 +6,7 @@ $(".crypto-header-footer").find('[data-cryptotab="'+SelectedCryptoTab+'"]').addC
 
 var CryptoData = [];
 CryptoData.Portfolio = 0;
-CryptoData.Value = 500;
+CryptoData.Value = 200;
 CryptoData.Worth = 1000;
 CryptoData.WalletId = null;
 CryptoData.History = [];
