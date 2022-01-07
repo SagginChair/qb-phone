@@ -1646,6 +1646,12 @@ RegisterNUICallback('GetCryptoData', function(data, cb)
     end, data.crypto)
 end)
 
+RegisterNUICallback('BuyCrypto', function(data, cb)
+    QBCore.Functions.TriggerCallback('qb-crypto:server:BuyCrypto', function(CryptoData)
+        cb(CryptoData)
+    end, data)
+end)
+
 RegisterNUICallback('SellCrypto', function(data, cb)
     QBCore.Functions.TriggerCallback('qb-crypto:server:SellCrypto', function(CryptoData)
         cb(CryptoData)

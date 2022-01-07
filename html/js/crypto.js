@@ -6,8 +6,9 @@ $(".crypto-header-footer").find('[data-cryptotab="'+SelectedCryptoTab+'"]').addC
 
 var CryptoData = [];
 CryptoData.Portfolio = 0;
-CryptoData.Value = 200;
+CryptoData.Value = 250;
 CryptoData.Worth = 1000;
+CryptoData.Purchase = 375;
 CryptoData.WalletId = null;
 CryptoData.History = [];
 
@@ -247,13 +248,13 @@ $(document).on('click', '#transfer-crypto', function(e){
 $(".crypto-action-page-buy-crypto-input-money").keyup(function(){
     var MoneyInput = this.value
 
-    $(".crypto-action-page-buy-crypto-input-coins").val((MoneyInput / CryptoData.Worth).toFixed(6));
+    $(".crypto-action-page-buy-crypto-input-coins").val((MoneyInput / CryptoData.Purchase).toFixed(6));
 }); 
 
 $(".crypto-action-page-buy-crypto-input-coins").keyup(function(){
     var MoneyInput = this.value
 
-    $(".crypto-action-page-buy-crypto-input-money").val(Math.ceil(CryptoData.Worth * MoneyInput));
+    $(".crypto-action-page-buy-crypto-input-money").val(Math.ceil(CryptoData.Purchase * MoneyInput));
 });
 
 $(".crypto-action-page-sell-crypto-input-money").keyup(function(){
